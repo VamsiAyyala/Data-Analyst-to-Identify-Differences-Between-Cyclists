@@ -1,0 +1,101 @@
+﻿Process (in SQL):
+# check if there are any duplicate ride_id's
+SELECT
+ride_id,
+Count(*), 
+FROM `temp-424017.Cyclistic_Bike_Share_Analysis.Cyclistic Bicycle Data `
+GROUP BY
+ride_id
+HAVING
+Count(*)>1;
+
+
+# check if there are any null values in any of the columns which could potentially render the analysis inaccurate
+SELECT
+start_lat IS NULL OR ended_at IS NULL OR start_lng IS NULL OR  end_lat IS NULL OR end_lng IS NULL
+FROM `temp-424017.Cyclistic_Bike_Share_Analysis.Cyclistic Bicycle Data `;
+
+
+
+
+
+
+#comparing the minimum, and maximum started_at times with the minimum and maximum ended_at times and checking whether they are on the same or separate days. The results of the minimum and maximum starting at points and ending at points will be retrieved using the sql database and the results will be compared manually. 
+SELECT
+min(started_at), max(started_at),
+min(ended_at), max(ended_at),
+FROM `temp-424017.Cyclistic_Bike_Share_Analysis.Cyclistic Bicycle Data `;
+
+
+Process(in R):
+install package and import file with columns added and modified with the help of SQL
+install.packages('tidyverse')
+library(tidyverse)
+library(readr)
+Bicycle_Trip_Data<-read.csv("Bicycle Trip Data 2020-Divvy_Trips_2020_Q`.csv")
+
+
+
+
+
+
+# View the first several rows of data, column names, and number of distinct rows to make sure that all of the data is intact and included in the imported file
+
+
+View(Bicycle_Trip_Data_2020_Divvy_Trips_2020_Q1)
+> head(Bicycle_Trip_Data_2020_Divvy_Trips_2020_Q1)
+
+
+#View the column names associated with the table 
+> colnames(Bicycle_Trip_Data_2020_Divvy_Trips_2020_Q1)
+ [1] "ride_id"            "rideable_type"      "started_at"         "ended_at"           "start_station_name"
+
+
+#View the number of distinct rows associated with the table to make sure that all the data is included
+> n_distinct(Bicycle_Trip_Data_2020_Divvy_Trips_2020_Q1$ride_id)
+[1] 426887
+
+
+> nrow(Bicycle_Trip_Data_2020_Divvy_Trips_2020_Q1)
+[1] 426887
+
+
+
+
+Analyze:
+
+
+# create a new bike frame with two columns indicating the difference in times between starting and ending locations and differences in distance between starting and ending locations
+SELECT
+   member_casual, AVG(TIMESTAMP_DIFF(ended_at, started_at,SECOND)) AS avg_duration_seconds, AVG(SQRT(POW((end_lat-start_lat),2)+POW((end_lng-start_lng), 2)))*111 AS avg_distance_km
+   FROM `temp-424017.Cyclistic_Bike_Share_Analysis.Cyclistic Bicycle Data `
+
+
+   GROUP BY
+   member_casual;
+    
+# Find out the number of rows there are dedicated to started_at and ended_at positions to determine the frequency of cycle usage between members and casual riders
+SELECT
+member_casual,
+COUNT(started_at),
+COUNT(ended_at)
+
+
+FROM `temp-424017.Cyclistic_Bike_Share_Analysis.Cyclistic Bicycle Data `
+
+
+GROUP BY
+member_casual;
+
+
+
+
+Analyze(In R):
+# Select data that indicates the summary statistics of ride length to get a good understanding of how longest, shortest and longest amount of times cyclists have spent riding. This way you can get a good understanding of what is considered to be a good ride length, a below average ride length and a long ride length. 
+> Bicycle_Data %>%
++ select(member_casual,ride_length) %>%
++ summary()
+
+
+# Creates a visualization using R to illustrate the relationship between type of member, the amount of time each ride takes and the days of the week they spend time riding
+ggplot(data=Bicycle_Data, aes(x=day_of_week, y=ride_length, color=member_casual)) + geom_col()
