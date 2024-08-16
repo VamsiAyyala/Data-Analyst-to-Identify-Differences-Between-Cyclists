@@ -5,19 +5,24 @@ The company cyclist has two types of consumers which are casual riders and subsc
 Primary stakeholders:
 
 1.Director of Marketing
+
 2.My manager Lily Moreno
 
 Deliverable:
 
 1.To analyze data from several months of bicycle use from both members and casual riders throughout the year and take note of their differences.
+
 2.Identify what these differences are and how they can be used to create an effective marketing regime geared towards convincing casual riders to sign up for an annual membership
 
 
 Datasources:
 
 August divvy tripdata 2020
+
 March divvy tripdata 2020
+
 February divvy tripdata 2020
+
 September divvy tripdata 2020 
 
 
