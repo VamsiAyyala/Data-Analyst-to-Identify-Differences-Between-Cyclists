@@ -12,8 +12,11 @@ Deliverable:
 Data sources:
 
 August divvy tripdata 2020
+
 March divvy tripdata 2020
+
 February divvy tripdata 2020
+
 September divvy tripdata 2020
 
 Conclusion/Recommendations:
