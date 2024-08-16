@@ -1,4 +1,4 @@
-Business Objective:
+Project Scope of Work:
 
 The company cyclist has two types of consumers which are casual riders and subscribed members. Recently, executives at the company have identified that subscribed members generate more revenue for the company than casual riders and want to find the best incentive to convert casual riders into subscribed members. They acknowledge that the best way to approach this problem is by first identifying the differences between casual riders and subscribed members using product usage data and then use these differences to generate member conversion incentives.
 
