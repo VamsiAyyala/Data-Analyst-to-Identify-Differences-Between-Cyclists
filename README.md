@@ -10,6 +10,7 @@ Deliverable:
 2. Identify what these differences are and how they can be  used to create an effective marketing regime geared towards convincing  casual riders to sign up for an annual membership
    
 Data sources:
+
 August divvy tripdata 2020
 March divvy tripdata 2020
 February divvy tripdata 2020
