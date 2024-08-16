@@ -32,6 +32,6 @@ The amount of distance traveled by the casual rider is higher than that of a mem
 
 1. One way to address this marketing trend is to offer discounts for riders who spend less than two days a week riding and offer different payment options deviating based on the frequency of days a rider chooses to cycle.  For example, the lowest payment offer could be offered to riders who ride less only once a week, medium to riders who ride 2-3 days and the highest payment option to riders who ride more than three days.
 
-2. Offer a discount to new members that varies per season. The highest in the winter(the greatest difference in cycle use between members and the lowest in the summer(the highest difference in cycle use between members).
+2. Offer a discount to new members that varies per season. The highest in the winter(the greatest difference in cycle use between members and the lowest in the summer(the lowest difference in cycle use between members).
 
 3. Offer an additional discount to new members that ride their bicycle for more than 30 minutes at a time, an activity that casual members have preference towards. This will push greater incentives towards joining as a new member as casual members have a tendency to ride for longer periods of time than  traditional members.
